@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-no-undef */
 import styles from "./City.module.css";
 
 const formatDate = (date) =>
