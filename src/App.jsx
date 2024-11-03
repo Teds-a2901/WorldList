@@ -8,6 +8,8 @@ import AppLayout from "./pages/AppLayout";
 import CityList from "./components/CityList";
 import { useEffect, useState } from "react";
 import CountriesList from "./components/CountriesList";
+import City from "./components/City";
+import Form from "./components/Form";
 
 const BASE_URL = "http://localhost:9000";
 
@@ -44,6 +46,8 @@ function App() {
               index
               element={<CityList cities={cities} isLoading={isLoading} />}
             />
+            {/* New Rounte */}
+            <Route path="cities/:id" element={<City />} />
             <Route
               path="cities"
               element={<CityList cities={cities} isLoading={isLoading} />}
@@ -52,7 +56,8 @@ function App() {
               path="countries"
               element={<CountriesList cities={cities} isLoading={isLoading} />}
             />
-            <Route path="form" element={<p>Form</p>} />
+            {/* Programmatic Navigation with useNavigate */}
+            <Route path="form" element={<Form />} />
           </Route>
         </Routes>
       </BrowserRouter>
